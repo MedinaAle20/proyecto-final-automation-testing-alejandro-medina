@@ -29,21 +29,21 @@ pytest
 
 Para generar un reporte HTML usar:
 
-pytest tests/test_saucedemo.py -v --html=reporte.html
+pytest tests/test_saucedemo.py -v --html=reports/reporte.html
 
 El reporte se genera en el archivo:
 
-reporte.html
+reports/reporte.html
 
 ## Evidencias
 
 El proyecto genera un log de ejecucion en:
 
-logs/ejecucion.log
+reports/logs/ejecucion.log
 
 Si una prueba falla, se guarda automaticamente una captura de pantalla en:
 
-screenshots/
+reports/screenshots/
 
 ## Pruebas incluidas
 

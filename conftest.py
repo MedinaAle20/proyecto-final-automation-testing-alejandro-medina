@@ -5,10 +5,11 @@ from pathlib import Path
 from utils.helpers import get_driver
 
 
-LOGS_DIR = Path("logs")
-SCREENSHOTS_DIR = Path("screenshots")
+REPORTS_DIR = Path("reports")
+LOGS_DIR = REPORTS_DIR / "logs"
+SCREENSHOTS_DIR = REPORTS_DIR / "screenshots"
 
-LOGS_DIR.mkdir(exist_ok=True)
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
     filename=LOGS_DIR / "ejecucion.log",

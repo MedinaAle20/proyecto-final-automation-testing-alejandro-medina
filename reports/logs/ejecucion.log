@@ -10,3 +10,15 @@
 2026-05-26 23:08:57,758 - INFO - Resultado test: tests/test_saucedemo.py::test_validacion_interfaz - passed
 2026-05-26 23:08:59,956 - INFO - Inicia test: tests/test_saucedemo.py::test_agregar_al_carrito
 2026-05-26 23:09:02,528 - INFO - Resultado test: tests/test_saucedemo.py::test_agregar_al_carrito - passed
+2026-05-26 23:13:42,451 - INFO - Inicia test: tests/test_saucedemo.py::test_login
+2026-05-26 23:13:42,912 - INFO - Inicia test: tests/test_saucedemo.py::test_catalogo_productos
+2026-05-26 23:13:43,251 - INFO - Inicia test: tests/test_saucedemo.py::test_validacion_interfaz
+2026-05-26 23:13:43,609 - INFO - Inicia test: tests/test_saucedemo.py::test_agregar_al_carrito
+2026-05-26 23:14:04,316 - INFO - Inicia test: tests/test_saucedemo.py::test_login
+2026-05-26 23:14:06,424 - INFO - Resultado test: tests/test_saucedemo.py::test_login - passed
+2026-05-26 23:14:08,646 - INFO - Inicia test: tests/test_saucedemo.py::test_catalogo_productos
+2026-05-26 23:14:10,801 - INFO - Resultado test: tests/test_saucedemo.py::test_catalogo_productos - passed
+2026-05-26 23:14:12,993 - INFO - Inicia test: tests/test_saucedemo.py::test_validacion_interfaz
+2026-05-26 23:14:15,692 - INFO - Resultado test: tests/test_saucedemo.py::test_validacion_interfaz - passed
+2026-05-26 23:14:17,839 - INFO - Inicia test: tests/test_saucedemo.py::test_agregar_al_carrito
+2026-05-26 23:14:20,353 - INFO - Resultado test: tests/test_saucedemo.py::test_agregar_al_carrito - passed
