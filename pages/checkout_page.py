@@ -4,6 +4,8 @@ from pages.base_page import BasePage
 
 
 class CheckoutPage(BasePage):
+    """Page Object del flujo de checkout."""
+
     FIRST_NAME_INPUT = (By.ID, "first-name")
     LAST_NAME_INPUT = (By.ID, "last-name")
     POSTAL_CODE_INPUT = (By.ID, "postal-code")

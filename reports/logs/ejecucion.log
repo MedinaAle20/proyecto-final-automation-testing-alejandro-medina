@@ -237,3 +237,23 @@
 2026-07-05 18:34:12,185 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_checkout_completo - passed
 2026-07-05 18:34:14,427 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_menu_lateral_y_logout
 2026-07-05 18:34:18,604 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_menu_lateral_y_logout - passed
+2026-07-05 18:43:55,676 - INFO - Inicia test: tests/api/test_jsonplaceholder_api.py::test_get_lista_usuarios
+2026-07-05 18:43:56,294 - INFO - Resultado test: tests/api/test_jsonplaceholder_api.py::test_get_lista_usuarios - passed
+2026-07-05 18:43:56,297 - INFO - Inicia test: tests/api/test_jsonplaceholder_api.py::test_post_crear_usuario
+2026-07-05 18:43:56,854 - INFO - Resultado test: tests/api/test_jsonplaceholder_api.py::test_post_crear_usuario - passed
+2026-07-05 18:43:56,855 - INFO - Inicia test: tests/api/test_jsonplaceholder_api.py::test_delete_usuario
+2026-07-05 18:43:57,541 - INFO - Resultado test: tests/api/test_jsonplaceholder_api.py::test_delete_usuario - passed
+2026-07-05 18:43:57,542 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_login_exitoso
+2026-07-05 18:44:00,713 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_login_exitoso - passed
+2026-07-05 18:44:03,001 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_login_invalido[0]
+2026-07-05 18:44:05,907 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_login_invalido[0] - passed
+2026-07-05 18:44:08,152 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_login_invalido[1]
+2026-07-05 18:44:11,048 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_login_invalido[1] - passed
+2026-07-05 18:44:13,300 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_catalogo_productos
+2026-07-05 18:44:16,617 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_catalogo_productos - passed
+2026-07-05 18:44:18,832 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_agregar_productos_al_carrito
+2026-07-05 18:44:38,965 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_agregar_productos_al_carrito - passed
+2026-07-05 18:44:41,160 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_checkout_completo
+2026-07-05 18:44:45,197 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_checkout_completo - passed
+2026-07-05 18:44:47,380 - INFO - Inicia test: tests/ui/test_saucedemo_ui.py::test_menu_lateral_y_logout
+2026-07-05 18:44:51,909 - INFO - Resultado test: tests/ui/test_saucedemo_ui.py::test_menu_lateral_y_logout - passed

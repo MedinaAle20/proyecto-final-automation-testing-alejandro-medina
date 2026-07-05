@@ -8,6 +8,7 @@ from pages.menu_page import MenuPage
 
 
 def iniciar_sesion(driver, test_data):
+    # Login valido reutilizable para los tests que arrancan desde el catalogo.
     login_page = LoginPage(driver)
     login_page.open()
     login_page.login(
@@ -62,6 +63,7 @@ def test_checkout_completo(driver, test_data):
     selected_products = test_data["expected_products"][:2]
     checkout_data = test_data["checkout"]
 
+    # Flujo completo: catalogo -> carrito -> datos de compra -> confirmacion.
     inventory_page.add_products_by_name(selected_products)
     inventory_page.go_to_cart()
 

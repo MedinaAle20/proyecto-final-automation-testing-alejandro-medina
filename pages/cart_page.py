@@ -4,6 +4,8 @@ from pages.base_page import BasePage
 
 
 class CartPage(BasePage):
+    """Page Object del carrito."""
+
     TITLE = (By.CSS_SELECTOR, ".title")
     CART_ITEM_NAME = (By.CSS_SELECTOR, "[data-test='inventory-item-name']")
     CHECKOUT_BUTTON = (By.ID, "checkout")

@@ -4,6 +4,8 @@ from pages.base_page import BasePage
 
 
 class MenuPage(BasePage):
+    """Page Object del menu lateral."""
+
     MENU_BUTTON = (By.ID, "react-burger-menu-btn")
     ALL_ITEMS_LINK = (By.CSS_SELECTOR, "[data-test='inventory-sidebar-link']")
     ABOUT_LINK = (By.CSS_SELECTOR, "[data-test='about-sidebar-link']")

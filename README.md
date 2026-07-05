@@ -1,10 +1,14 @@
-# Proyecto Final - Automation Testing
+# Proyecto Final - Automation Testing SauceDemo
 
 Autor: Alejandro Medina
 
 ## Proposito del proyecto
 
-Este proyecto es un framework de automatizacion de pruebas desarrollado en Python para la entrega final del curso. Incluye pruebas UI sobre SauceDemo y pruebas API sobre JSONPlaceholder, aplicando Page Object Model, datos externos, reportes HTML, logging y screenshots automaticos ante fallos.
+Este proyecto automatiza pruebas web y de API para la entrega final del curso.
+
+La parte UI prueba flujos principales de SauceDemo: login, catalogo, carrito, checkout y logout. La parte API usa JSONPlaceholder para validar requests GET, POST y DELETE.
+
+El proyecto esta organizado con Page Object Model para que los tests queden simples y la logica de Selenium quede separada en clases de pagina.
 
 Sitio web demo: https://www.saucedemo.com/
 
@@ -24,28 +28,28 @@ API publica: https://jsonplaceholder.typicode.com/
 
 ```text
 .
-├── conftest.py
-├── data/
-│   └── users.json
-├── pages/
-│   ├── base_page.py
-│   ├── cart_page.py
-│   ├── checkout_page.py
-│   ├── inventory_page.py
-│   ├── login_page.py
-│   └── menu_page.py
-├── reports/
-│   ├── logs/
-│   │   └── ejecucion.log
-│   └── screenshots/
-├── requirements.txt
-├── tests/
-│   ├── api/
-│   │   └── test_jsonplaceholder_api.py
-│   └── ui/
-│       └── test_saucedemo_ui.py
-└── utils/
-    └── helpers.py
+|-- conftest.py
+|-- data/
+|   `-- users.json
+|-- pages/
+|   |-- base_page.py
+|   |-- cart_page.py
+|   |-- checkout_page.py
+|   |-- inventory_page.py
+|   |-- login_page.py
+|   `-- menu_page.py
+|-- reports/
+|   |-- logs/
+|   |   `-- ejecucion.log
+|   `-- screenshots/
+|-- requirements.txt
+|-- tests/
+|   |-- api/
+|   |   `-- test_jsonplaceholder_api.py
+|   `-- ui/
+|       `-- test_saucedemo_ui.py
+`-- utils/
+    `-- helpers.py
 ```
 
 ## Instalacion de dependencias
@@ -96,7 +100,7 @@ El reporte queda disponible en:
 reports/reporte.html
 ```
 
-El reporte muestra los tests ejecutados, su estado, duracion y detalles de fallos. Si una prueba UI falla, el framework guarda una captura y la agrega al reporte cuando el plugin Pytest HTML esta disponible.
+El reporte muestra que tests se ejecutaron, si pasaron o fallaron y cuanto tardaron. Si una prueba UI falla, se guarda una captura y se agrega al reporte cuando Pytest HTML esta disponible.
 
 ## GitHub Actions
 
@@ -106,7 +110,7 @@ El proyecto incluye un workflow basico en:
 .github/workflows/tests.yml
 ```
 
-Este workflow se ejecuta en cada push o pull request hacia `master` o `main`. Instala las dependencias, ejecuta la suite completa en modo headless y publica el reporte HTML como artefacto del pipeline.
+Este workflow se ejecuta en cada push o pull request hacia `master` o `main`. Instala dependencias, corre las pruebas en modo headless y deja el reporte HTML como artefacto.
 
 ## Logs y screenshots
 
@@ -136,7 +140,7 @@ Los datos externos se encuentran en:
 data/users.json
 ```
 
-Incluyen usuario valido, usuarios invalidos, datos de checkout y productos esperados del catalogo.
+Incluye usuario valido, usuarios invalidos, datos de checkout y productos esperados del catalogo.
 
 ## Pruebas UI incluidas
 
@@ -155,7 +159,7 @@ Incluyen usuario valido, usuarios invalidos, datos de checkout y productos esper
 
 ## Buenas practicas aplicadas
 
-- Page Object Model para separar interaccion con la pagina y logica de tests.
+- Page Object Model para separar la interaccion con la pagina de la logica de los tests.
 - Tests independientes entre si.
 - Uso de waits explicitos en Selenium.
 - Datos de prueba externos en JSON.

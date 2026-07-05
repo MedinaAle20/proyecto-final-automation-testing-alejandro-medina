@@ -1,11 +1,14 @@
-import pytest
-import logging
 import json
+import logging
 from datetime import datetime
 from pathlib import Path
+
+import pytest
+
 from utils.helpers import get_driver
 
 
+# Carpetas donde quedan el reporte, los logs y las capturas.
 REPORTS_DIR = Path("reports")
 LOGS_DIR = REPORTS_DIR / "logs"
 SCREENSHOTS_DIR = REPORTS_DIR / "screenshots"
@@ -33,12 +36,14 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="session")
 def test_data():
+    # Datos externos para no dejar usuarios y checkout escritos dentro de los tests.
     with DATA_FILE.open(encoding="utf-8") as file:
         return json.load(file)
 
 
 @pytest.fixture
 def driver(request):
+    # Cada test UI usa un navegador nuevo, asi los tests son independientes.
     driver = get_driver(headless=request.config.getoption("--headless"))
     yield driver
     driver.quit()
@@ -62,6 +67,7 @@ def pytest_runtest_makereport(item, call):
         driver = item.funcargs.get("driver")
 
         if driver:
+            # Si falla un test UI, guarda una captura con nombre del test y hora.
             fecha = datetime.now().strftime("%Y%m%d_%H%M%S")
             nombre_archivo = f"{item.name}_{fecha}.png"
             ruta_captura = SCREENSHOTS_DIR / nombre_archivo
