@@ -1,0 +1,29 @@
+{
+  "valid_user": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "invalid_users": [
+    {
+      "username": "usuario_invalido",
+      "password": "clave_incorrecta"
+    },
+    {
+      "username": "locked_out_user",
+      "password": "secret_sauce"
+    }
+  ],
+  "checkout": {
+    "first_name": "Alejandro",
+    "last_name": "Medina",
+    "postal_code": "5000"
+  },
+  "expected_products": [
+    "Sauce Labs Backpack",
+    "Sauce Labs Bike Light",
+    "Sauce Labs Bolt T-Shirt",
+    "Sauce Labs Fleece Jacket",
+    "Sauce Labs Onesie",
+    "Test.allTheThings() T-Shirt (Red)"
+  ]
+}

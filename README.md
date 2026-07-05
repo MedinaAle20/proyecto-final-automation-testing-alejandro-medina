@@ -1,53 +1,164 @@
-# PreProyecto - Automatizacion SauceDemo
-ALEJANDRO MEDINA
+# Proyecto Final - Automation Testing
+
+Autor: Alejandro Medina
 
 ## Proposito del proyecto
 
-Este proyecto automatiza pruebas web sobre el sitio https://www.saucedemo.com/.
-El objetivo es validar flujos principales de una tienda demo, como login,
-catalogo de productos, menu lateral y carrito de compras.
+Este proyecto es un framework de automatizacion de pruebas desarrollado en Python para la entrega final del curso. Incluye pruebas UI sobre SauceDemo y pruebas API sobre JSONPlaceholder, aplicando Page Object Model, datos externos, reportes HTML, logging y screenshots automaticos ante fallos.
+
+Sitio web demo: https://www.saucedemo.com/
+
+API publica: https://jsonplaceholder.typicode.com/
 
 ## Tecnologias utilizadas
 
 - Python
-- Selenium WebDriver
 - Pytest
+- Selenium WebDriver
+- Requests
 - Pytest HTML
-- Google Chrome
+- Page Object Model
+- Git y GitHub
+
+## Estructura del proyecto
+
+```text
+.
+├── conftest.py
+├── data/
+│   └── users.json
+├── pages/
+│   ├── base_page.py
+│   ├── cart_page.py
+│   ├── checkout_page.py
+│   ├── inventory_page.py
+│   ├── login_page.py
+│   └── menu_page.py
+├── reports/
+│   ├── logs/
+│   │   └── ejecucion.log
+│   └── screenshots/
+├── requirements.txt
+├── tests/
+│   ├── api/
+│   │   └── test_jsonplaceholder_api.py
+│   └── ui/
+│       └── test_saucedemo_ui.py
+└── utils/
+    └── helpers.py
+```
 
 ## Instalacion de dependencias
 
-Desde la carpeta del proyecto ejecutar el comando:
+Desde la carpeta raiz del proyecto:
 
-pip install -r requeriments.txt
+```bash
+pip install -r requirements.txt
+```
 
 ## Ejecucion de pruebas
 
-Para ejecutar todas las pruebas usar:
+Ejecutar todos los tests:
 
+```bash
 pytest
+```
 
-Para generar un reporte HTML usar:
+Ejecutar solo pruebas UI:
 
-pytest tests/test_saucedemo.py -v --html=reports/reporte.html
+```bash
+pytest tests/ui
+```
 
-El reporte se genera en el archivo:
+Ejecutar solo pruebas API:
 
+```bash
+pytest tests/api
+```
+
+Ejecutar pruebas UI sin abrir la ventana del navegador:
+
+```bash
+pytest tests/ui --headless
+```
+
+## Reporte HTML
+
+Generar el reporte HTML:
+
+```bash
+pytest --html=reports/reporte.html --self-contained-html
+```
+
+El reporte queda disponible en:
+
+```text
 reports/reporte.html
+```
 
-## Evidencias
+El reporte muestra los tests ejecutados, su estado, duracion y detalles de fallos. Si una prueba UI falla, el framework guarda una captura y la agrega al reporte cuando el plugin Pytest HTML esta disponible.
 
-El proyecto genera un log de ejecucion en:
+## GitHub Actions
 
+El proyecto incluye un workflow basico en:
+
+```text
+.github/workflows/tests.yml
+```
+
+Este workflow se ejecuta en cada push o pull request hacia `master` o `main`. Instala las dependencias, ejecuta la suite completa en modo headless y publica el reporte HTML como artefacto del pipeline.
+
+## Logs y screenshots
+
+El log de ejecucion se guarda en:
+
+```text
 reports/logs/ejecucion.log
+```
 
-Si una prueba falla, se guarda automaticamente una captura de pantalla en:
+Los screenshots automaticos por fallo se guardan en:
 
+```text
 reports/screenshots/
+```
 
-## Pruebas incluidas
+El nombre de cada captura incluye el nombre del test y la fecha/hora, por ejemplo:
 
-- Login con credenciales validas.
+```text
+test_login_invalido_20260705_153000.png
+```
+
+## Datos de prueba
+
+Los datos externos se encuentran en:
+
+```text
+data/users.json
+```
+
+Incluyen usuario valido, usuarios invalidos, datos de checkout y productos esperados del catalogo.
+
+## Pruebas UI incluidas
+
+- Login exitoso con usuario valido.
+- Login invalido con datos incorrectos y usuario bloqueado.
 - Validacion del catalogo de productos.
-- Validacion del menu lateral.
 - Agregado de productos al carrito.
+- Checkout completo.
+- Validacion del menu lateral y logout.
+
+## Pruebas API incluidas
+
+- GET de lista de usuarios.
+- POST de creacion de usuario.
+- DELETE de usuario.
+
+## Buenas practicas aplicadas
+
+- Page Object Model para separar interaccion con la pagina y logica de tests.
+- Tests independientes entre si.
+- Uso de waits explicitos en Selenium.
+- Datos de prueba externos en JSON.
+- Logging centralizado.
+- Screenshots automaticos ante fallos.
+- Separacion clara entre pruebas UI y API.
